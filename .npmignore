@@ -1,0 +1,14 @@
+.git
+.DS_Store
+.idea
+.babelrc
+node_modules
+npm-debug.log
+coverage
+test
+src
+*.lock
+*.tgz
+*.coffee
+.npmignore
+.gitignore

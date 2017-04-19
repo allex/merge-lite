@@ -1,0 +1,14 @@
+{
+  "name": "@fedor/merge",
+  "version": "1.0.1",
+  "description": "Merge for object array to support merged by a specficd property indexes",
+  "main": "index.js",
+  "scripts": {
+    "build": "coffee -o ./ ./",
+    "watch": "coffee -w -o ./ ./",
+    "prepublish": "npm run build",
+    "test": "tap test/*.js"
+  },
+  "author": "allex_wang",
+  "license": "ISC"
+}
