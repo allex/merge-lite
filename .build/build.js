@@ -76,7 +76,7 @@ const tasks = [
       },
       {
         format: 'cjs',
-        file: 'dist/merge.esm.js'
+        file: 'dist/index.js'
       }
     ]
   }

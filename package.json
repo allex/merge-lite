@@ -1,21 +1,24 @@
 {
-  "name": "@fedor/merge",
+  "name": "merge-lite",
   "version": "1.0.1",
-  "description": "Merge for object array to support merged by a specficd key",
+  "description": "A light weight merge support customize array<object> property merging.",
   "main": "dist/merge.umd.js",
   "browser": "dist/merge.umd.min.js",
-  "module": "dist/merge.esm.js",
+  "module": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/allex/merge-lite.git"
+  },
   "scripts": {
-    "build-coffee": "coffee -o ./ ./",
+    "build-coffee": "coffee -o ./dist ./",
     "build": "node .build/build.js",
-    "watch": "coffee -w -o ./ ./",
+    "watch": "coffee -w -o ./dist ./",
     "prepare": "npm run build && npm test",
     "test": "mocha test/*.js"
   },
   "author": "allex_wang",
   "license": "MIT",
   "dependencies": {
-    "extend": "^3.0.1"
   },
   "devDependencies": {
     "rollup": "^0.50.0",

@@ -2,6 +2,7 @@
 .DS_Store
 .idea
 .babelrc
+.build
 node_modules
 npm-debug.log
 coverage
@@ -12,3 +13,4 @@ src
 *.coffee
 .npmignore
 .gitignore
+dist/lib/

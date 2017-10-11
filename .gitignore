@@ -17,6 +17,5 @@
 .env
 node_modules
 coverage
-lib
 *.log
 *.js
