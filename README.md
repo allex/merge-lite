@@ -98,6 +98,6 @@ it('merge by a specific customizer', () => {
 
 ## License
 
-MIT
+[MIT](http://opensource.org/licenses/MIT)
 
 [1]: https://lodash.com/docs/#mergeWith
