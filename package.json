@@ -9,7 +9,7 @@
     "build-coffee": "coffee -o ./ ./",
     "build": "node .build/build.js",
     "watch": "coffee -w -o ./ ./",
-    "prepublish": "npm run build && npm test",
+    "prepare": "npm run build && npm test",
     "test": "mocha test/*.js"
   },
   "author": "allex_wang",
