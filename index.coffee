@@ -1,5 +1,5 @@
 ###*
-# Merge for object array to support merged by a specficd property indexes.
+# Merge for object array to support merged by a specficd property.
 #
 # @author Allex Wang (allex.wxn@gmail.com)
 # MIT Licensed
@@ -7,24 +7,34 @@
 
 'use strict'
 
-baseMerge = require('lodash').merge
+extend = require 'extend'
+
+# Assign all of [args](...Object) to the destination object [target]
+# the api seems like [_.merge](https://lodash.com/docs/4.17.4#merge)
+assignMerge = (target, args...) ->
+  args.unshift true, target
+  extend.apply null, args
 
 TRUE = (k) -> true
+OPTS = () -> {}
+
+shadow = (o) -> if Array.isArray(o) then [] else {}
 
 copy = (o) ->
-  out = if Array.isArray(o) then [] else {}
+  out = shadow o
   for k, v of o
     out[k] = if typeof v == 'object' then copy(v) else v
   out
 
-merge = (r, s, options = {}) ->
+baseMerge = (r, s, options = {}) ->
+
   # defaults to add new items in supplies
   options.add = options.add ? true
 
-  return s and copy(s) or s if not r
+  return if s and not r then s
 
   if not Array.isArray(s)
-    r = baseMerge(r, s)
+    assignMerge(r, s)
 
   else if s and s.length
     id = options.pk ? 'id'
@@ -43,11 +53,13 @@ merge = (r, s, options = {}) ->
           refMap[k] = m
 
     sMap = {}
+
+    # Iterate source list to merge element by primary key
     for m in s
       if m and (k = m[id]) and filter(m)
         sMap[k] = m
         if refMap[k]
-          baseMerge refMap[k], m
+          assignMerge refMap[k], m
         else if options.add
           r.push m
 
@@ -55,9 +67,20 @@ merge = (r, s, options = {}) ->
     if pending.length > 0
       for o in pending
         m = sMap[o[id]]
-        baseMerge o, m if m and filter(m)
+        assignMerge o, m if m and filter(m)
 
-  # return a copy if needed.
-  if options.clone then copy(r) else r
+  # Returns the target [r]
+  r
+
+merge = (args...) ->
+  options = OPTS
+  target = shadow args[0]
+  if typeof args[args.length - 1] is 'function'
+    options = args[args.length - 1]
+    args.pop()
+  options = options()
+  for source in args
+    baseMerge target, source, options
+  return target
 
 module.exports = merge

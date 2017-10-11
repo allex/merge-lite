@@ -1,14 +1,27 @@
 {
   "name": "@fedor/merge",
   "version": "1.0.1",
-  "description": "Merge for object array to support merged by a specficd property indexes",
-  "main": "index.js",
+  "description": "Merge for object array to support merged by a specficd key",
+  "main": "dist/merge.umd.js",
+  "browser": "dist/merge.umd.min.js",
+  "module": "dist/merge.esm.js",
   "scripts": {
-    "build": "coffee -o ./ ./",
+    "build-coffee": "coffee -o ./ ./",
+    "build": "node .build/build.js",
     "watch": "coffee -w -o ./ ./",
-    "prepublish": "npm run build",
-    "test": "tap test/*.js"
+    "prepublish": "npm run build && npm test",
+    "test": "mocha test/*.js"
   },
   "author": "allex_wang",
-  "license": "ISC"
+  "license": "MIT",
+  "dependencies": {
+    "extend": "^3.0.1"
+  },
+  "devDependencies": {
+    "rollup": "^0.50.0",
+    "rollup-plugin-coffee-script": "^1.1.0",
+    "rollup-plugin-commonjs": "^8.2.1",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "uglify-js": "^3.0.28"
+  }
 }
