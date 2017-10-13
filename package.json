@@ -10,20 +10,26 @@
     "url": "https://github.com/allex/merge-lite.git"
   },
   "keywords": [
-    "merge", "extend", "customizer", "recursive", "deep", "lodash.mergeWith"
+    "merge",
+    "extend",
+    "customizer",
+    "recursive",
+    "deep",
+    "lodash.mergeWith"
   ],
   "scripts": {
     "build-coffee": "coffee -o ./dist ./",
     "build": "node .build/build.js",
     "watch": "coffee -w -o ./dist ./",
-    "prepare": "npm run build && npm test",
-    "test": "mocha test/*.js"
+    "prepare": "npm test",
+    "test": "npm run build && mocha test/*.js"
   },
   "author": "allex_wang",
   "license": "MIT",
   "dependencies": {
   },
   "devDependencies": {
+    "mocha": "^4.0.1",
     "rollup": "^0.50.0",
     "rollup-plugin-coffee-script": "^1.1.0",
     "rollup-plugin-commonjs": "^8.2.1",
