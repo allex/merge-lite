@@ -13,4 +13,6 @@ src
 *.coffee
 .npmignore
 .gitignore
+.gitkeep
+.gitlab-ci.y*
 dist/lib/
