@@ -68,7 +68,7 @@ extend = (args...) ->
         srcValue = source[key]
 
         # Prevent never-ending loop
-        if target != srcValue
+        if target isnt srcValue
 
           # Recurse if we're merging plain objects or arrays
           if deep and srcValue and (isPlainObject(srcValue) or (isArr = isArray(srcValue)))

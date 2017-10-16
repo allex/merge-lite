@@ -90,7 +90,10 @@ merge = (sources...) ->
     else
       options = fn
 
-  options = options() || {}
+  options = options()
+  throw new Error('Illegal option generator.') if options is undefined
+
+  options = options || {}
 
   # freeze destination object optionally
   if options.freeze

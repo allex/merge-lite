@@ -82,13 +82,14 @@ describe('test merge(args...)', () => {
     ]
     var l2 = [
       { name: 'd', value: 'd', foo: 1 },
-      { name: 'a', value: 'a', foo: 1 },
+      { name: 'a', foo: 1 },
       { name: 'b', value: 'b' },
       { name: 'c', value: 'c', foo: 1 },
       { name: 'x', value: 'x', foo: 1 }
     ]
 
-    var ret = merge(l1, l2, () => ({ pk: 'name' }))
-    assert.deepEqual(ret[1], { name: 'a', value: 'a', foo: 1 })
+    var ret = merge([], l1, l2, () => ({ pk: 'name' }))
+    assert.deepEqual(ret[1], { name: 'a', value: '1', foo: 1 })
   })
+
 })

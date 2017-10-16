@@ -49,7 +49,7 @@ it('merge by list by indexes', () => {
   ]
   var l2 = [
     { name: 'd', value: 'd', foo: 1 },
-    { name: 'a', value: 'a', foo: 1 },  // <---
+    { name: 'a', foo: 1 },  // <---
     { name: 'b', value: 'b' },
     { name: 'c', value: 'c', foo: 1 },
     { name: 'x', value: 'x', foo: 1 }
@@ -57,7 +57,7 @@ it('merge by list by indexes', () => {
 
   /*
   [ { name: '0', value: '0' },
-    { name: 'a', value: 'a', foo: 1 }, // <<<=-
+    { name: 'a', value: '1', foo: 1 }, // <<<=-
     { name: 'b', value: 'b' },
     { name: 'd', value: 'd', foo: 1 },
     { name: 'c', value: 'c', foo: 1 },
