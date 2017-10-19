@@ -1,6 +1,6 @@
 # merge-lite
 
-A lightweight merge utility which the api compatible with lodash [`_.mergeWith()`][1]
+A tiny implementation of merge that api compatible with lodash [`_.mergeWith()`][1]
 
 ```js
 import merge from 'merge-lite'

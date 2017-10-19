@@ -1,7 +1,7 @@
 {
   "name": "merge-lite",
   "version": "1.0.2",
-  "description": "A light weight merge support customize array<object> property merging.",
+  "description": "A tiny implementation of merge supports customize array<object> property merging.",
   "main": "dist/merge.umd.js",
   "browser": "dist/merge.umd.min.js",
   "module": "dist/index.js",
