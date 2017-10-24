@@ -21,7 +21,7 @@
     "build-coffee": "coffee -o ./dist ./",
     "build": "node .build/build.js",
     "watch": "coffee -w -o ./dist ./",
-    "prepare": "npm test",
+    "prepublishOnly": "npm test",
     "test": "npm run build && mocha test/*.js"
   },
   "author": "allex_wang",

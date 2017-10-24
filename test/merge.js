@@ -1,3 +1,6 @@
+/* global describe: true */
+/* global it: true */
+
 var assert = require('assert')
 var merge = require('../')
 

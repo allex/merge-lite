@@ -10,7 +10,7 @@ extend = require './lib/extend'
 { toString } = {}
 
 isArray = Array.isArray or (arr) ->
-	toString.call(arr) is '[object Array]'
+  toString.call(arr) is '[object Array]'
 
 # Assign all of [args](...Object) to the destination object [target]
 # the api seems like [_.merge](https://lodash.com/docs/4.17.4#merge)
